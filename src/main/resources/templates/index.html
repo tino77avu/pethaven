@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetHaven - Tu mascota merece amor incluso cuando tú no estás</title>
+    <meta name="description" content="Conecta con cuidadores verificados que tratarán a tu mascota como parte de su familia.">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg pethaven-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
+                <img th:src="@{/images/animales.png}" alt="PetHaven" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#como-funciona">Cómo funciona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#para-duenos">Para dueños</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#para-cuidadores">Para cuidadores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary pethaven-btn-primary px-4" href="#">Encontrar cuidador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline pethaven-btn-secondary px-4" href="#">Quiero cuidar mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <img th:src="@{/images/logo.png}" alt="PetHaven" class="navbar-logo-end ms-2">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-blob hero-blob-3"></div>
+        
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-75 py-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="hero-title mb-4">
+                        Tu mascota merece amor incluso cuando tú no estás
+                    </h1>
+                    <p class="hero-subtitle mb-5">
+                        Conecta con cuidadores verificados que la tratarán como parte de su familia.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-4">
+                        <a href="#" class="btn pethaven-btn-primary btn-lg px-5 py-3">
+                            Encontrar cuidador
+                        </a>
+                        <a href="#" class="btn pethaven-btn-secondary btn-lg px-5 py-3">
+                            Quiero cuidar mascotas
+                        </a>
+                    </div>
+                    <p class="hero-stats text-muted small">
+                        Más de 1,200 mascotas cuidadas con cariño ❤️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="section-how py-5">
+        <div class="container py-5">
+            <h2 class="section-title text-center mb-5">¿Cómo funciona?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="pethaven-card how-card h-100">
+                        <div class="card-number">1</div>
+                        <div class="card-icon mb-3">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h3 class="card-title">Busca cerca de ti</h3>
+                        <p class="card-text">Encuentra cuidadores de confianza en tu zona en solo unos clics.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pethaven-card how-card h-100">
+                        <div class="card-number">2</div>
+                        <div class="card-icon mb-3 stars-icon">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h3 class="card-title">Revisa perfiles con reseñas reales</h3>
+                        <p class="card-text">Lee las opiniones de otros dueños y elige con tranquilidad.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pethaven-card how-card h-100">
+                        <div class="card-number">3</div>
+                        <div class="card-icon mb-3 shield-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="card-title">Reserva con tranquilidad</h3>
+                        <p class="card-text">Tu mascota estará segura. Reserva fácil y sin preocupaciones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para dueños -->
+    <section id="para-duenos" class="section-owners py-5">
+        <div class="section-decor section-decor-left"></div>
+        <div class="section-decor section-decor-right"></div>
+        
+        <div class="container py-5 position-relative">
+            <h2 class="section-title text-center mb-5">
+                Viaja tranquilo, tu mascota está en buenas manos
+            </h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-3">
+                    <div class="pethaven-card feature-card h-100">
+                        <div class="feature-icon"><i class="bi bi-patch-check-fill"></i></div>
+                        <h4 class="feature-title">Cuidadores verificados</h4>
+                        <p class="feature-text">Todos nuestros cuidadores pasan un proceso de verificación.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pethaven-card feature-card h-100">
+                        <div class="feature-icon"><i class="bi bi-chat-quote-fill"></i></div>
+                        <h4 class="feature-title">Reseñas reales</h4>
+                        <p class="feature-text">Opiniones verificadas de dueños como tú.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pethaven-card feature-card h-100">
+                        <div class="feature-icon"><i class="bi bi-camera-fill"></i></div>
+                        <h4 class="feature-title">Fotos y actualizaciones</h4>
+                        <p class="feature-text">Recibe fotos y novedades mientras estás fuera.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="pethaven-card feature-card h-100">
+                        <div class="feature-icon"><i class="bi bi-heart-fill"></i></div>
+                        <h4 class="feature-title">Atención personalizada</h4>
+                        <p class="feature-text">Cada mascota recibe el cariño que merece.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para cuidadores -->
+    <section id="para-cuidadores" class="section-caregivers py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title caregivers-title">
+                        Convierte tu amor por los animales en ingresos
+                    </h2>
+                    <p class="caregivers-text mb-4">
+                        Si amas a las mascotas y tienes espacio en casa, únete a nuestra comunidad de cuidadores verificados. 
+                        Gana dinero haciendo lo que más te gusta.
+                    </p>
+                    <a href="#" class="btn pethaven-btn-coral btn-lg px-5 py-3">
+                        Crear mi perfil
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="caregivers-visual rounded-4 p-5 text-center">
+                        <i class="bi bi-house-heart display-1 text-white mb-3"></i>
+                        <p class="text-white mb-0">Tu hogar puede ser el refugio perfecto para una mascota</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pethaven-footer py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a href="/" class="footer-brand d-inline-block mb-3">
+                        <img th:src="@{/images/animales.png}" alt="PetHaven" class="footer-logo">
+                    </a>
+                    <p class="footer-text">
+                        Conectando mascotas con amor desde el primer día.
+                    </p>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Plataforma</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#como-funciona">Cómo funciona</a></li>
+                        <li><a href="#para-duenos">Para dueños</a></li>
+                        <li><a href="#para-cuidadores">Para cuidadores</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Legal</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="footer-heading">Contacto</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider my-4">
+            <div class="text-center">
+                <p class="footer-copy mb-0">© 2025 PetHaven. Hecho con ❤️ para las mascotas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
