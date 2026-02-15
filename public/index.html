@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +10,14 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom styles -->
-    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg pethaven-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-                <img th:src="@{/images/animales.png}" alt="PetHaven" class="navbar-logo">
+                <img src="/images/animales.png" alt="PetHaven" class="navbar-logo">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
                         <a class="btn btn-outline pethaven-btn-secondary px-4" href="#">Quiero cuidar mascotas</a>
                     </li>
                     <li class="nav-item">
-                        <img th:src="@{/images/logo.png}" alt="PetHaven" class="navbar-logo-end ms-2">
+                        <img src="/images/Logo.png" alt="PetHaven" class="navbar-logo-end ms-2">
                     </li>
                 </ul>
             </div>
@@ -235,7 +235,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <a href="/" class="footer-brand d-inline-block mb-3">
-                        <img th:src="@{/images/animales.png}" alt="PetHaven" class="footer-logo">
+                        <img src="/images/animales.png" alt="PetHaven" class="footer-logo">
                     </a>
                     <p class="footer-text">
                         Conectando mascotas con amor desde el primer día.

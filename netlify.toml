@@ -1,0 +1,10 @@
+# Configuración de despliegue para Netlify
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Carpeta que Netlify publicará (sitio estático listo)
+  publish = "public"
+  
+  # Sin comando de build: public/ ya contiene todo el sitio estático
+  # Si prefieres que el build copie desde src/, descomenta la línea inferior:
+  # command = "bash build-netlify.sh"
