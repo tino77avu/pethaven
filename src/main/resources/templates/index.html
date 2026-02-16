@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetHaven - Tu mascota merece amor incluso cuando tú no estás</title>
-    <meta name="description" content="Conecta con cuidadores verificados que tratarán a tu mascota como parte de su familia.">
+    <meta name="description" content="Plataforma para conectar con cuidadores. Tú eliges quién cuidará de tu mascota según perfiles y reseñas.">
+    <!-- Fuentes: Inter (cuerpo) + Playfair Display (editorial/lujo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -17,7 +21,7 @@
     <nav class="navbar navbar-expand-lg pethaven-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center" href="/">
-                <img th:src="@{/images/animales.png}" alt="PetHaven" class="navbar-logo">
+                <img th:src="@{/images/animales.png(v='1')}" alt="PetHaven" class="navbar-logo">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +33,10 @@
                         <a class="nav-link" href="#como-funciona">Cómo funciona</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#para-duenos">Para dueños</a>
+                        <a class="nav-link" href="#confianza">Confianza</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#para-cuidadores">Para cuidadores</a>
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-primary pethaven-btn-primary px-4" href="#">Encontrar cuidador</a>
@@ -57,8 +61,13 @@
         <div class="container position-relative">
             <div class="row align-items-center min-vh-75 py-5">
                 <div class="col-lg-8 mx-auto text-center">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span class="text-uppercase" style="font-size: 0.9em; letter-spacing: 0.03em;">Más de 1,200 mascotas cuidadas con cariño</span>
+                        <i class="bi bi-heart-fill ms-1" style="color: var(--coral);"></i>
+                    </div>
                     <h1 class="hero-title mb-4">
-                        Tu mascota merece amor incluso cuando tú no estás
+                        Tu mascota merece <span class="highlight">amor</span> incluso cuando tú no estás
                     </h1>
                     <p class="hero-subtitle mb-5">
                         Conecta con cuidadores verificados que la tratarán como parte de su familia.
@@ -110,9 +119,51 @@
                         </form>
                     </div>
                     
-                    <p class="hero-stats text-muted small mt-4">
-                        Más de 1,200 mascotas cuidadas con cariño ❤️
-                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destacados - Cards con imágenes -->
+    <section class="section-featured-cards py-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
+                <a href="#" class="btn pethaven-btn-primary btn-lg px-5 py-3">Encontrar cuidador</a>
+                <a href="#" class="btn pethaven-btn-secondary btn-lg px-5 py-3">Quiero ser cuidador</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="featured-card">
+                        <div class="featured-card-image-wrap">
+                            <img th:src="@{/images/animal1.png(v='1')}" alt="Cuidado personalizado" class="featured-card-image">
+                        </div>
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">Cuidado personalizado</h3>
+                            <p class="featured-card-subtitle">ATENCIÓN UNO A UNO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-card">
+                        <div class="featured-card-image-wrap">
+                            <img th:src="@{/images/animal2.png(v='1')}" alt="Cuidadores verificados" class="featured-card-image">
+                        </div>
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">Cuidadores verificados</h3>
+                            <p class="featured-card-subtitle">PERFILES CON RESEÑAS REALES</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-card">
+                        <div class="featured-card-image-wrap">
+                            <img th:src="@{/images/animal3.png(v='1')}" alt="Tranquilidad total" class="featured-card-image">
+                        </div>
+                        <div class="featured-card-overlay">
+                            <h3 class="featured-card-title">Tranquilidad total</h3>
+                            <p class="featured-card-subtitle">RESERVA CON CONFIANZA</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,82 +172,154 @@
     <!-- Cómo funciona -->
     <section id="como-funciona" class="section-how py-5">
         <div class="container py-5">
-            <h2 class="section-title text-center mb-5">¿Cómo funciona?</h2>
+            <h2 class="section-title text-center mb-3">Cómo funciona</h2>
+            <p class="section-subtitle text-center">Tres simples pasos para encontrar el cuidador perfecto para tu mascota.</p>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="pethaven-card how-card h-100">
                         <div class="card-number">1</div>
                         <div class="card-icon mb-3">
-                            <i class="bi bi-geo-alt-fill"></i>
+                            <i class="bi bi-search"></i>
                         </div>
                         <h3 class="card-title">Busca cerca de ti</h3>
-                        <p class="card-text">Encuentra cuidadores de confianza en tu zona en solo unos clics.</p>
+                        <p class="card-text">Encuentra cuidadores verificados en tu zona con disponibilidad inmediata.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pethaven-card how-card h-100">
                         <div class="card-number">2</div>
                         <div class="card-icon mb-3 stars-icon">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star"></i>
                         </div>
                         <h3 class="card-title">Revisa perfiles con reseñas reales</h3>
-                        <p class="card-text">Lee las opiniones de otros dueños y elige con tranquilidad.</p>
+                        <p class="card-text">Lee experiencias de otros dueños y conoce a tu cuidador antes de reservar.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="pethaven-card how-card h-100">
                         <div class="card-number">3</div>
                         <div class="card-icon mb-3 shield-icon">
-                            <i class="bi bi-shield-check"></i>
+                            <i class="bi bi-check-circle"></i>
                         </div>
                         <h3 class="card-title">Reserva con tranquilidad</h3>
-                        <p class="card-text">Tu mascota estará segura. Reserva fácil y sin preocupaciones.</p>
+                        <p class="card-text">Pago seguro, soporte 24/7 y garantía de satisfacción en cada reserva.</p>
+                        <a href="#" class="btn pethaven-btn-primary btn-sm mt-3">
+                            Encontrar cuidador <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Para dueños -->
-    <section id="para-duenos" class="section-owners py-5">
+    <!-- Confianza -->
+    <section id="confianza" class="section-owners py-5">
         <div class="section-decor section-decor-left"></div>
         <div class="section-decor section-decor-right"></div>
         
         <div class="container py-5 position-relative">
-            <h2 class="section-title text-center mb-5">
-                Viaja tranquilo, tu mascota está en buenas manos
-            </h2>
+            <h2 class="section-title text-center mb-3">Seguridad y confianza en cada reserva</h2>
+            <p class="section-subtitle text-center">La elección del cuidador y la responsabilidad recaen en ti. Te damos las herramientas para decidir.</p>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-3">
                     <div class="pethaven-card feature-card h-100">
-                        <div class="feature-icon"><i class="bi bi-patch-check-fill"></i></div>
-                        <h4 class="feature-title">Cuidadores verificados</h4>
-                        <p class="feature-text">Todos nuestros cuidadores pasan un proceso de verificación.</p>
+                        <div class="feature-icon feature-icon-yellow"><i class="bi bi-shield-check"></i></div>
+                        <h4 class="feature-title">Perfiles verificados</h4>
+                        <p class="feature-text">Verificamos la identidad de los cuidadores. Tú decides con quién reservar.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="pethaven-card feature-card h-100">
-                        <div class="feature-icon"><i class="bi bi-chat-quote-fill"></i></div>
+                        <div class="feature-icon feature-icon-yellow"><i class="bi bi-chat-quote-fill"></i></div>
                         <h4 class="feature-title">Reseñas reales</h4>
-                        <p class="feature-text">Opiniones verificadas de dueños como tú.</p>
+                        <p class="feature-text">Lee las opiniones de otros dueños para ayudarte a elegir.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="pethaven-card feature-card h-100">
-                        <div class="feature-icon"><i class="bi bi-camera-fill"></i></div>
-                        <h4 class="feature-title">Fotos y actualizaciones</h4>
-                        <p class="feature-text">Recibe fotos y novedades mientras estás fuera.</p>
+                        <div class="feature-icon feature-icon-yellow"><i class="bi bi-lock-fill"></i></div>
+                        <h4 class="feature-title">Pagos seguros</h4>
+                        <p class="feature-text">Transacciones protegidas para tu tranquilidad.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="pethaven-card feature-card h-100">
-                        <div class="feature-icon"><i class="bi bi-heart-fill"></i></div>
+                        <div class="feature-icon feature-icon-yellow"><i class="bi bi-heart-fill"></i></div>
                         <h4 class="feature-title">Atención personalizada</h4>
-                        <p class="feature-text">Cada mascota recibe el cariño que merece.</p>
+                        <p class="feature-text">Cada cuidador ofrece su estilo de cuidado. Revisa el perfil y decide.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="section-testimonials py-5">
+        <div class="container py-5">
+            <h2 class="section-title text-center mb-3">Historias de dueños felices</h2>
+            <p class="section-subtitle text-center">Miles de mascotas han encontrado su segundo hogar temporal con PetHaven.</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="pethaven-card testimonial-card h-100">
+                        <div class="testimonial-header mb-3">
+                            <div class="testimonial-avatar rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-person-fill text-white"></i>
+                            </div>
+                            <div class="d-inline-block">
+                                <h5 class="mb-0 text-white">María González</h5>
+                                <small class="text-white-50">Dueño de Golden Retriever</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="testimonial-text mb-0">Dejé a Max con Ana durante una semana y regresó más feliz que nunca. Las fotos diarias me dieron mucha tranquilidad. ¡Totalmente recomendado!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pethaven-card testimonial-card h-100">
+                        <div class="testimonial-header mb-3">
+                            <div class="testimonial-avatar rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-person-fill text-white"></i>
+                            </div>
+                            <div class="d-inline-block">
+                                <h5 class="mb-0 text-white">Carlos Ramírez</h5>
+                                <small class="text-white-50">Dueño de Gato Siamés</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="testimonial-text mb-0">Luna es muy tímida con extraños, pero con Diego fue amor a primera vista. El cuidado fue impecable y los precios muy justos.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pethaven-card testimonial-card h-100">
+                        <div class="testimonial-header mb-3">
+                            <div class="testimonial-avatar rounded-circle d-inline-flex align-items-center justify-content-center me-3">
+                                <i class="bi bi-person-fill text-white"></i>
+                            </div>
+                            <div class="d-inline-block">
+                                <h5 class="mb-0 text-white">Sofía Mendoza</h5>
+                                <small class="text-white-50">Dueño de Labrador</small>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars mb-2">
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                            <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <p class="testimonial-text mb-0">La plataforma es súper fácil de usar. Encontré a la cuidadora perfecta en minutos. Rocky se quedó jugando todo el día, ¡no quería irse!</p>
                     </div>
                 </div>
             </div>
@@ -212,16 +335,20 @@
                         Convierte tu amor por los animales en ingresos
                     </h2>
                     <p class="caregivers-text mb-4">
-                        Si amas a las mascotas y tienes espacio en casa, únete a nuestra comunidad de cuidadores verificados. 
-                        Gana dinero haciendo lo que más te gusta.
+                        Únete a nuestra comunidad de cuidadores y genera ingresos extra haciendo lo que más te gusta: cuidar mascotas.
                     </p>
+                    <ul class="caregivers-list list-unstyled mb-4">
+                        <li class="caregivers-list-item"><i class="bi bi-check-lg me-2"></i>Define tus propios horarios y tarifas con total flexibilidad</li>
+                        <li class="caregivers-list-item"><i class="bi bi-check-lg me-2"></i>Conoce mascotas adorables y sus dueños cada semana</li>
+                        <li class="caregivers-list-item"><i class="bi bi-check-lg me-2"></i>Recibe pagos seguros y puntuales sin complicaciones</li>
+                    </ul>
                     <a href="#" class="btn pethaven-btn-coral btn-lg px-5 py-3">
                         Crear mi perfil
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <div class="caregivers-visual rounded-4 p-5 text-center">
-                        <i class="bi bi-house-heart display-1 text-white mb-3"></i>
+                    <div class="caregivers-visual rounded-4 p-4 text-center">
+                        <img th:src="@{/images/entrega.png(v='1')}" alt="Mascotas" class="caregivers-image img-fluid rounded-3 mb-3">
                         <p class="text-white mb-0">Tu hogar puede ser el refugio perfecto para una mascota</p>
                     </div>
                 </div>
@@ -235,7 +362,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <a href="/" class="footer-brand d-inline-block mb-3">
-                        <img th:src="@{/images/animales.png}" alt="PetHaven" class="footer-logo">
+                        <img th:src="@{/images/animales.png(v='1')}" alt="PetHaven" class="footer-logo">
                     </a>
                     <p class="footer-text">
                         Conectando mascotas con amor desde el primer día.
@@ -245,7 +372,8 @@
                     <h5 class="footer-heading">Plataforma</h5>
                     <ul class="footer-links list-unstyled">
                         <li><a href="#como-funciona">Cómo funciona</a></li>
-                        <li><a href="#para-duenos">Para dueños</a></li>
+                        <li><a href="#confianza">Confianza</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
                         <li><a href="#para-cuidadores">Para cuidadores</a></li>
                     </ul>
                 </div>
@@ -266,10 +394,20 @@
             </div>
             <hr class="footer-divider my-4">
             <div class="text-center">
+                <p class="footer-disclaimer small">
+                    PetHaven es una plataforma de conexión entre dueños y cuidadores. La elección del cuidador y la responsabilidad del cuidado recaen en el usuario.
+                </p>
                 <p class="footer-copy mb-0">© 2025 PetHaven. Hecho con ❤️ para las mascotas.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante izquierdo -->
+    <div class="floating-cta-left">
+        <a href="#" class="floating-cta-btn">
+            Encontrar cuidador <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+    </div>
 
     <!-- Botones flotantes de contacto -->
     <div class="floating-contact">
